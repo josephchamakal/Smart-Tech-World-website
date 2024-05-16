@@ -1,0 +1,390 @@
+html{
+    padding: 0%;
+    margin: 0px;
+    scroll-behavior: smooth;
+    
+}
+.main{
+    background-color: #020a50;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #faf5fa;
+}
+svg{
+    font-weight: 500;
+
+}
+svg text{
+    font-size: 38px;
+    stroke-width: 2;
+    text-transform: uppercase;
+    letter-spacing: -6;
+}
+svg text.Animation{
+    stroke: #faf5fa;
+    animation: 4s 4 alternate animate-stroke;
+    /* animation-delay: 1.5s; */
+} 
+@keyframes animate-stroke{
+    0%{
+        fill: transparent;
+        stroke: 0;
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 32% 0;
+    }
+    50%{
+       stroke:transparent;
+       stroke:#faf5fa;
+    }
+    80%, 100%{
+        fill:#faf5fa;
+        stroke:transparent;
+        stroke-width: 3;
+        stroke-dashoffset: 25;
+        stroke-dasharray: 0 32%;
+    }
+} 
+.header{
+    background-image: url(Smart_Tech_Resources/Smart_Tech_Bg_2.jpg);
+    background-color: hsl(234, 95%, 16%,0.7);
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: center; 
+}
+.Company{
+    top:0;
+    left:0;
+    padding:8%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.logo{
+    width: 200px;
+}
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    list-style: none;
+    transition: 0,25s ease-in-out;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(255,0,0,0.8);
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgb(0, 0, 0 ,0.8);
+    z-index: 1;
+}
+a{
+    text-decoration: none;
+    color: rgb(23, 16, 237);
+}
+
+a:hover{
+    color: rgb(255, 36, 36);
+}
+a:active{
+    color: rgb(255, 36, 36);
+}
+.Nav{
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.5em;
+}
+.mission{
+    padding: 80px;
+}
+.About {
+    color: #fff;
+    text-align: center;
+}
+.vision{
+    padding: 5px;
+    color: black;
+    text-align: center; 
+    
+}
+.goal{
+    list-style: none;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    box-shadow: 0 0 30px rgb(0,0,0,.5);
+    
+    
+}
+.goal p{
+    padding: 5px;
+    text-align: left;
+}
+p span{
+    color: aqua;
+    text-transform: uppercase;
+}
+.t23{
+    display: flex;
+    justify-content: center;
+}
+.first1{
+    padding: 0 50px;
+}
+.first1 a{
+    color: #36f506;
+}
+.first1 a:hover{
+    color: #f50a06;
+}
+.first1 svg, img{
+    position:relative;
+    bottom: -12px;
+}
+.title{
+    text-align: center;
+    color:#fff;
+    padding: 10px;
+}
+.Back{
+    text-align: center;
+    padding: 20px;
+
+}
+.Back button{
+    border: 2px solid #030000;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;  
+}
+.Back button:hover, .sub:hover{
+    transition: 1s ease;
+    background-color: #f89b29;
+}
+.foot{
+    background-image: url(Smart_Tech_Resources/Smart\ tech\ Bg\ 1.jpeg);
+    background-color: hsl(234, 95%, 16%,0.7);
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: center; 
+    padding: 15px;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.foot2{
+    color: #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 640px;
+}
+.Developer{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.copyright{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.all{
+    padding: 10px;
+}
+.services{
+    color: #fff;
+    padding: 60px;
+    text-align: center;
+
+}
+.pictures{
+    border-radius: 20px;
+    top: -20px;
+    width: 315px;
+    height: 180px;
+}
+.Client{
+    display: flex;
+}
+.name{
+    padding: 15px;
+}
+.Product, .customers{
+    display: flex;
+    padding: 2.5px;
+    box-shadow: hsla(0, 2%, 18%, 0.83);
+}
+.product, .Client{
+    border-radius: 20px;
+    color: black;
+    background-color: antiquewhite;
+    list-style: none;
+    margin: 5px;  
+    box-shadow: 0 0 30px rgb(0,0,0,.5); 
+}
+.product{
+    width: 315px;
+}
+.product h3 {
+    color: black;
+    text-align: center;
+}
+.Customers{
+    color: #fff;
+    text-align: center;
+}
+.product p{
+    padding: 5px;
+}
+.comment{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: red;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    z-index: 99;
+}
+.comment h2{
+    color: #fff;
+    font-size: 2em;
+    user-select: none;
+}
+.comment a:hover{
+    color: #1b1515;
+}
+.Talk{
+    height: 800px;
+    background-image: url(Smart_Tech_Resources/Smart_Tech_Bg_2.jpg);
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: center; 
+}
+.wrapper{
+    top: 150px;
+    left: 600px;
+    position: relative;
+    padding: 5px 40px;
+    width: 400px;
+    height: 440px;
+    border: 2px solid rgb(255,0,0,0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(0, 0, 0 ,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+ }
+.intro h2{
+    text-align: center;
+    top: -15px;
+    position: relative;
+
+}
+form div{
+    left: 40px;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+}
+.intro {
+    color: #fff;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+}
+.navigation {
+    position:relative;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.sub{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #f50606;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin: 40px;
+    bottom: 0;
+    left: 30px;
+
+}
+.sub:hover{
+    background: #fff;
+    color: #ff0000;
+}
+.rem{
+    display: flex;
+    padding: 10px 0;
+
+}
+.more{ border: none;
+    width: 315px;
+    padding: 40px;
+    text-align: right;
+    cursor: pointer;
+    background-color:antiquewhite;
+}
+@media screen and (max-width:720px){
+    .Nav{
+        padding: 15px;
+        font-size: 16px;
+    
+    }
+    .Product{
+        flex-direction: column;
+        width: 315px;
+    }
+    .logo{
+        width:80px;
+    }
+    .goal{
+        width: 360px;
+    }
+    .mission{
+        padding: 60px;
+    }
+    .customers{
+        flex-direction: column;
+        padding: 0px;
+    }
+    .t23{
+        flex-direction: column;
+        padding:0 10px;
+    }
+    .comment{
+        padding:10px 30px
+        
+    }
+    .wrapper{
+        width: 320px;
+        top: 110px;
+        left: 50px;
+    }
+    .foot2{
+        left:70px ;
+    }
+    
+}
