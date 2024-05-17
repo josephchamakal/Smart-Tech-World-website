@@ -69,6 +69,7 @@ svg text.Animation{
     top: 0;
     left: 0;
     width: 100%;
+    height:50px;
     padding: 5px;
     backdrop-filter: blur(15px);
     display: flex;
@@ -243,8 +244,9 @@ p span{
     color: #fff;
     text-align: center;
 }
-.product p{
+.product p, .Client p{
     padding: 5px;
+    text-align: left;
 }
 .comment{
     position: fixed;
@@ -347,7 +349,7 @@ form div{
     cursor: pointer;
     background-color:antiquewhite;
 }
-@media screen and (max-width:720px){
+@media screen and (max-width:640px){
     .Nav{
         padding: 15px;
         font-size: 16px;
@@ -386,5 +388,8 @@ form div{
     .foot2{
         left:70px ;
     }
-    
+    .container{
+        width: 100%;
+        height:20px;
+    }
 }
