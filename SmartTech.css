@@ -43,6 +43,8 @@ svg text.Animation{
     }
 } 
 .header{
+    left: 0;
+    width: 100%;
     background-image: url(Smart_Tech_Resources/Smart_Tech_Bg_2.jpg);
     background-color: hsl(234, 95%, 16%,0.7);
     background-size: cover;
@@ -365,8 +367,9 @@ form div{
     .goal{
         width: 360px;
     }
-    .mission{
-        padding: 60px;
+    .vision{
+        padding: 0px;
+        width: 315px;
     }
     .customers{
         flex-direction: column;
