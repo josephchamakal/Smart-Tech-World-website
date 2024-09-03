@@ -11,32 +11,57 @@
         <h2>Smart Tech World</h2>
         <a href="index.html" class="navigation">HOME</a>
     </header>
-    <div class="wrapper">
-        <div class="intro">
-            <h2>Review</h2>
-            <form action="#">
+    <div>
+        <form action="#" id="intro" class="intro">
+
+            <!-- Login Section -->
+
+            <section id="login">
+                <h2>Login</h2>
+                <hr>
+                <h3>Welcome Back!</h3>
                 <div>
-                    <input type="text" required>
-                    <label>Name</label>
+                    <label for="email" required autocomplete>Email:</label>
+                    <input  type="email" id="email" placeholder="Enter your mail address">
+                    <br><br>
                 </div>
                 <div>
-                    <input type="text" required>
-                    <label>Your Reviews </label>
+                    <label for="password" required>Password:</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <br><br>
                 </div>
                 <div>
-                    <label class="rem" ><input type="checkbox"> Remember me</label>
+                    <label class="rem" for="rem">
+                        <input type="checkbox" id="rem" value="1">Remember me</label>
                 </div>
-                <button class="sub">Submit</button>
-            </form>
-        </div>
+                <div>
+                    <button>Login</button>
+                </div>
+                <br>
+                <p>Don't have an account?<a href="#"class="Sign" id="sign">Sign Up</a></p> 
+                <p><a href="#" id="forget">Forgot Password?</a></p>
+            </section>
+           <hr>
+            <!-- Reviews Section -->
+
+            <section id="reviews">
+                <h2>Your Feedback</h2>
+                <div>
+                    <label for="youR">Your Review: </label>
+                    <textarea id="youR" type="text"></textarea>
+                </div>
+                    <button class="sub">Submit</button>
+            </section>
+        </form>
     </div>
+    <!--  footer -->
     <footer class="foot2">
         <p class="Developer"><strong>Developed and maintained by <span>EKAI</span></strong></p> 
         <div class="copyright"> &copy; SmartTech 2024
             <p class="all">All Rights reserved </p> 
         </div>
     </footer>
-    
+    <!-- Page Javascript -->
+    <script src="SmartTech.js"></script>
 </body>
-<script src="SmartTech.js"></script>
 </html>

@@ -1,147 +1,359 @@
-html{
-    padding: 0%;
+/* Reset code */
+
+*{
+    padding: 0px;
     margin: 0px;
-    scroll-behavior: smooth;
-    
+    box-sizing:border-box;
 }
+
+/* Page element target*/
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: rgb(187, 187, 199);
+}
+button a{
+    color:rgb(42, 174, 42);
+}
+a:hover, :focus{
+    color: #f50606;
+}
+a:active{
+    color: rgba(255, 36, 36, 0.7);
+}
+
+/* Header style */
 .main{
     font-family: Arial, Helvetica, sans-serif;
     color: #faf5fa;
 }
-svg{
-    font-weight: 500;
-
-}
-svg text{
-    font-size: 38px;
-    stroke-width: 2;
-    text-transform: uppercase;
-    letter-spacing: -6;
-}
-svg text.Animation{
-    stroke: #faf5fa;
-    animation: 4s 4 alternate animate-stroke;
-    /* animation-delay: 1.5s; */
-} 
-@keyframes animate-stroke{
-    0%{
-        fill: transparent;
-        stroke: 0;
-        stroke-dashoffset: -25%;
-        stroke-dasharray: 32% 0;
-    }
-    50%{
-       stroke:transparent;
-       stroke:#faf5fa;
-    }
-    80%, 100%{
-        fill:#faf5fa;
-        stroke:transparent;
-        stroke-width: 3;
-        stroke-dashoffset: 25;
-        stroke-dasharray: 0 32%;
-    }
-} 
 .header{
-    left: 0;
+    left: 0px;
     width: 100%;
     background-image: url(Smart_Tech_Resources/Smart_Tech_Bg_2.jpg);
-    background-color: hsl(234, 95%, 16%,0.7);
+    background-color: hsl(234, 95%, 16%,0.2);
     background-size: cover;
     background-blend-mode: overlay;
     background-position: center; 
-}
-.Company{
-    top:0;
-    left:0;
-    padding:8%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-   
-
-}
-.logo{
-    width: 200px;
 }
 .container{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height:50px;
-    padding: 5px;
-    background-color:black;
+    height: 25px;
+    background-color: rgb(3, 68, 3);
     display: flex;
     list-style: none;
-    transition: 0,25s ease-in-out;
+    transition: all 3s ease;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 0 0 5px;
+    box-shadow: 0 0 10px rgb(0, 0, 0 ,0.8);
+    z-index: 1;
+
+}
+.container #nav{
+    margin: 0 auto;
+    text-wrap: nowrap;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    display: flex;
+}
+#nav a{
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+#nav a:hover{
+    border-bottom:  1px solid #fff ;
+}
+/* Drop down menu style */
+
+.container .subMenu ul {
+    position: absolute;
+    top: 100%;
+    background-color: rgb(3, 68, 3);
+    border-radius: 0 0 0.6rem .6rem;
+    padding: .4rem;
+    opacity: 0;
+    list-style: none;
+    visibility: hidden;
+    transform: translateX(-1rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    border-left: 1px solid rgba(255, 255, 255, 1);
+    border-right: 1px solid rgba(255, 255, 255, 1);
+    transition-property: opacity, visibility, transform;
+
+}
+.container .subMenu:hover ul{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.container .subMenu ul a{
+    background-color: rgb(8, 62, 8);
+    border-right: 2px solid rgba(255, 255, 255, 1);
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    font-size: 13px;
+    width: 200px;
+    display: flex;
+    /* justify-content: space-between;   // To Add arrow icon */
+    margin: 2px;
+    padding: 5px;
+    border-radius: .4rem;
+    transition-property: background-color, padding,font-size;
+}
+.container .subMenu:hover ul a{
+    padding: 10px;
+}
+.container .subMenu ul a:hover{
+    font-size: 16px;
+    padding: 1rem;
+}
+.container .subMenu:hover,
+.container .subMenu ul,
+.container .subMenu ul a,
+.container .subMenu:hover ul a,
+.container .subMenu ul a:hover{
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+}
+.Company{
+    top: 0;
+    left: 0;
+    padding: 0px 20px;
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(255,255,255,1);
-    border-radius: 5px;
-    box-shadow: 0 0 30px rgb(0, 0, 0 ,0.8);
-    z-index: 1;
 }
-a{
-    text-decoration: none;
-    color: rgb(23, 16, 237);
+.logo{
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgb(138, 216, 138);
+    border-radius: 50%;
 }
 
-a:hover{
-    color: rgb(255, 36, 36);
+/* Creation of the Company name SVG */
+svg text{
+    font-size: 2.3rem;
+    stroke-width: 2;
+    text-transform: uppercase;
+    letter-spacing: -10;
 }
-a:active{
-    color: rgb(255, 36, 36);
+svg text.Animation{
+    stroke: #faf5fa;
+    animation: 4s  5 alternate forwards animate-stroke;
+    /* animation-fill-mode: forwards; */
+} 
+
+/* Animation of the SVG */
+@keyframes animate-stroke{
+    0%{
+        fill: transparent;
+        stroke: #faf5fa;
+        stroke-width: 3;
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 32% ;
+    }
+    50%{
+        fill: transparent;
+        stroke:#faf5fa;
+        stroke-width: 3;
+    }
+    80%, 100%{
+        fill:#faf5fa;
+        stroke:transparent;
+        stroke-width: 0;
+        stroke-dashoffset: -25;
+        stroke-dasharray: 32% 0;
+    }
 }
-.Nav{
-    margin: 0;
-    justify-content: center;
-    align-items: center;
+
+/* main page style */
+.power{
     text-align: center;
-    padding: 30px;
-    font-size: 1.5em;
-    color: #fff;
+    padding-top: 8px;
+    position: relative;
+
 }
-.mission{
-    padding: 80px;
+.aboutUs{
+    padding-top: 10px;
 }
 .About {
-    color: #033000;
+    color: black;
     text-align: center;
+    padding-top: 20px;
 }
 .vision{
-    padding: 5px;
     color: black;
+    padding: 15px;
     text-align: center; 
+    display: flex;
+    flex-wrap: wrap;
     
 }
-.goal{
-    list-style: none;
-    border-radius: 20px;
+.mission{
+    width: 450px;
+    padding-top:15px;
+    margin: 0 auto 2.5rem auto;
+    border-radius: 10px;
     background-color: antiquewhite;
-    box-shadow: 0 0 30px rgb(0,0,0,.5);
-    
-    
+    box-shadow: 0 0 10px rgb(0,0,0,.5); 
 }
-.goal p{
+.mission:first-child{
+    background-color: rgb(3, 68, 3);
+    color: #faf5fa;
+}
+.mission:last-child{
+    background-color: #f50a06;
+    /* color: #f50606; */
+}
+.mission p{
+    padding: 10px;
+    padding-top: 5px;
+    text-align: left;
+}
+.services{
+    width: 100%;
+    color: #030000;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #f50606;
+}
+.services h2{
+    padding-bottom:20px;
+    font-size: 28px;
+}
+#moreContent{
+    width: 70px;
+    border-radius: 1rem;
+}
+.Customers h2{
+    text-decoration: underline;
+}
+.customer{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+    overflow: hidden;
+}
+.Client{
+    min-width: 230px;
+    border-radius: 20px;
+    color: black;
+    background-color: antiquewhite;
+    margin-top: 1.4rem;
+    margin-bottom: 2.5rem;  
+    margin-left: 20px;
+}
+.arrow{
+    font-size: 2rem;
+    text-align: right;
+    padding-right: 10px;
+    animation: .5s ease-in-out  infinite  both alternate-reverse Arrow;
+}
+@keyframes Arrow{
+    0%{
+        filter: contrast(35%);
+        filter: brightness(35%);
+        transform: translateX(-2rem);
+    }
+    50%{
+
+        filter: contrast(65%);
+        filter: brightness(65%);
+        transform: translateX(-1rem);
+    }
+    70%,100%{
+        filter: contrast(100%);
+        filter: brightness(100%);
+        transform: translateX(0);
+    }
+}
+.product p, .Client p{
     padding: 5px;
     text-align: left;
 }
-p span{
-    color: aqua;
-    text-transform: uppercase;
+.Customers{
+    padding-top: 40px;
+    color: white;
+    text-align: center;
+    background-color: #030000;
 }
-.t23{
+.Products{
+    padding: 5px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    box-shadow: hsla(0, 2%, 18%, 0.83);
+}
+.product{
+    width: 400px;
+    margin: 0 auto 2.5rem auto;
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+.product h3 {
+    color: black;
+    text-align: center;
+}
+.pictures{ 
+    border-radius: 20px 20px 0 0;
+    top: -20px;
+    width: 100%;
+    height: 180px;
+    filter: brightness(70%);
+}
+.pictures:hover{
+    filter: brightness(120%);
+}
+.name{
+    padding: 5px;
+}
+.Back{
+    text-align: center;
+    padding: 20px;
+
+}
+.Back button{
+    background-color: rgb(45, 45, 40);
+    border: 2px solid #030000;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    border-radius:50%;  
+}
+.Back button:hover, .sub:hover{
+    transition: 1s ease;
+    background-color: rgb(3, 68, 3);
+}
+.title{
+    text-align: center;
+    color:#030000;
+    padding: 10px;
+}
+.SMedia{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
 }
 .first1{
-    padding: 0 50px;
+    padding: 10px;
 }
 .first1 a{
-    color: #36f506;
+    color: rgb(23, 16, 237);
 }
 .first1 a:hover{
     color: #f50a06;
@@ -150,105 +362,41 @@ p span{
     position:relative;
     bottom: -12px;
 }
-.title{
-    text-align: center;
-    color:#fff;
-    padding: 10px;
-}
-.Back{
-    text-align: center;
-    padding: 20px;
-
-}
-.Back button{
-    border: 2px solid #030000;
-    outline: none;
-    cursor: pointer;
-    padding: 15px;
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    border-radius:50%;  
-}
-.Back button:hover, .sub:hover{
-    transition: 1s ease;
-    background-color: #f89b29;
-}
 .foot{
+    height: 11vh;
     background-image: url(Smart_Tech_Resources/Smart\ tech\ Bg\ 1.jpeg);
     background-color: hsl(234, 95%, 16%,0.7);
     background-size: cover;
     background-blend-mode: overlay;
     background-position: center; 
-    padding: 15px;
+    padding: 25px;
     margin-left: 0;
     margin-bottom: 0;
 }
-.foot2{
-    color: #fff;
-    position: absolute;
-    bottom: -5px;
-    left: 640px;
-}
+
+/* Both pages footer style */
 .Developer{
     text-align: center;
-    justify-content: center;
-    align-items: center;
 }
 .copyright{
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
 }
 .all{
     padding: 10px;
 }
-.services{
-    color: black;
-    padding: 60px;
-    text-align: center;
+p span{
+    color: aqua;
+    text-transform: uppercase;
+}
 
-}
-.pictures{
-    border-radius: 20px;
-    top: -20px;
-    width: 315px;
-    height: 180px;
-}
-.Client{
-    display: flex;
-}
-.name{
-    padding: 15px;
-}
-.Product, .customers{
-    display: flex;
-    padding: 2.5px;
-    box-shadow: hsla(0, 2%, 18%, 0.83);
-}
-.product, .Client{
-    border-radius: 20px;
-    color: black;
-    background-color: antiquewhite;
-    list-style: none;
-    margin: 5px;  
-    box-shadow: 0 0 30px rgb(0,0,0,.5); 
-}
-.product{
-    width: 315px;
-}
-.product h3 {
-    color: black;
-    text-align: center;
-}
-.Customers{
-    color: black;
-    text-align: center;
-}
-.product p, .Client p{
-    padding: 5px;
-    text-align: left;
+/* Login page style */
+.Talk{
+    background-image: url(Smart_Tech_Resources/Smart_Tech_Bg_2.jpg);
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-position: center; 
 }
 .comment{
     position: fixed;
@@ -256,75 +404,144 @@ p span{
     left: 0;
     width: 100%;
     padding: 30px;
-    background: red;
+    background: rgb(3, 68, 3);
     display:flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-evenly;
-    z-index: 99;
+    z-index: 2;
 }
 .comment h2{
     color: #fff;
     font-size: 2em;
     user-select: none;
 }
+.comment a{
+    margin-left: 3rem;
+}
 .comment a:hover{
-    color: #1b1515;
-}
-.Talk{
-    height: 800px;
-    background-image: url(Smart_Tech_Resources/Smart_Tech_Bg_2.jpg);
-    background-size: cover;
-    background-blend-mode: overlay;
-    background-position: center; 
-}
-.wrapper{
-    top: 150px;
-    left: 600px;
-    position: relative;
-    padding: 5px 40px;
-    width: 400px;
-    height: 440px;
-    border: 2px solid rgb(255,0,0,0.8);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgb(0, 0, 0 ,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(15px);
- }
-.intro h2{
-    text-align: center;
-    top: -15px;
-    position: relative;
-
-}
-form div{
-    left: 40px;
-    width: 100px;
-    height: 50px;
-    padding: 10px;
-}
-.intro {
-    color: #fff;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-
+    color: #f50606;
 }
 .navigation {
     position:relative;
     color: #fff;
-    font-weight: 500;
     margin-left: 20px;
     text-decoration: none;
+}
+.intro{
+    width: 450px;
+    font: inherit;
+    color: #fff;
+    padding: 5px 40px;
+    border: 2px solid rgba(245, 6, 6,.8);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgb(0, 0, 0 ,0.8);
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    margin: 10rem auto 0 auto;
+}
+.intro h2, h3{
+    font-size: 28px;
+    text-align: center;
+}
+#login, #reviews{
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+    display:grid;
+    position: relative;
+    padding-bottom: 15px;
+}
+#login h2, #reviews h2{
+    text-decoration: underline ;
+}
+#login button,
+#reviews button{
+    border: 2px solid rgb(3, 68, 3);
+    width: 100%;
+    border-radius: 10rem;
+    background-color: transparent;
+    color: #f50606;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto ;
+    transition:  .5s ease-in-out;
+}
+#login button{
+    height: 2rem;
+}
+#reviews{ 
+    padding-top: 20px;
+}
+#login button:hover,
+#reviews button:hover{
+    font-size: 18px;
+    background-color: #fff;
+}
+#login input,
+#reviews textarea{
+    color: #030000;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid #030000;
+    margin: 0 auto;
+    background-color: transparent;
+    transition: .5s ease-in-out;
+}
+#login input:hover,
+#reviews textarea:hover{
+    border: 2px solid #f50606;
+}
+#reviews textarea:focus{
+    height: 4rem;
+}
+#login p, #return{
+    display: inline;
+    /* margin: 10px; */
+}
+#login p a,#already #return{
+    margin-left: 5px;
+    text-wrap: nowrap;
+    transition: 1s ease-in-out;
+}
+#login p a:hover,#already #return:hover{
+    text-decoration: underline;
+    color: #faf5fa;
+}
+.intro #login label{
+    text-align: center;
+}
+#login .rem{
+    width: 10px;
+    margin-left: 5px;
+    padding: 5px 0;
+    display: flex;
+    text-wrap: nowrap;
+}
+#login #agree{
+    display: flex;
+    gap: 5px;
+    padding-top: 15px;
+   
+}
+#already,#youR {
+    padding-top: 15px;
+}
+
+.rem #rem,#agree #rem{
+    margin-top: -6px;
+}
+.foot2{
+    color: #fff;
+    padding-top: 30px;
 }
 .sub{
     width: 130px;
     height: 50px;
     background: transparent;
     border: 2px solid #f50606;
-    border-radius: 6px;
+    border-radius: 10rem;
     outline: none;
     cursor: pointer;
     font-size: 1.1em;
@@ -333,66 +550,154 @@ form div{
     margin: 40px;
     bottom: 0;
     left: 30px;
-
 }
 .sub:hover{
     background: #fff;
-    color: #ff0000;
+    color: #f50606;
 }
-.rem{
-    display: flex;
-    padding: 10px 0;
 
-}
-.more{ border: none;
-    width: 315px;
-    padding: 40px;
-    text-align: right;
-    cursor: pointer;
-    background-color:antiquewhite;
-}
-@media screen and (max-width:576px){
-    .Nav{
-        padding: 15px;
-        font-size: 16px;
-    
+/* Breakup points */
+
+@media (min-width: 567px) and (max-width:767px){
+    .container {
+        height: 60px;
     }
-    .Product{
-        flex-direction: column;
-        width: 315px;
+    .container #nav{ 
+        padding: 20px; 
+        font-size: 22px;
+    }
+    .subMenu ul a{
+        font-size: 14px;
+        width: 250px;
+    }
+    .mission{
+        width: 330px;
+    
+    } 
+    .product{
+        width: 500px;
+    }
+    .Client{
+        min-width: 250px;
+    }
+    .foot{
+       height: 12vh;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .container{
+        height: 70px;
+    }
+    .container #nav{
+        margin: 0;
+        padding: 45px;
+        font-size: 26px; 
+    }
+    .subMenu ul a{
+        font-size: 15px;
+        width: 250px;
     }
     .logo{
-        width:80px;
+        width: 100px;
+        height: 100px;
     }
-    .goal{
-        width: 360px;
+    .mission{
+        width: 420px;
+    
+    } 
+    .product{
+        width: 400px;
     }
-    .vision{
-        padding: 0px;
-        width: 315px;
+    .foot{
+        height: 14vh;
     }
-    .customers{
-        flex-direction: column;
-        padding: 0px;
+    .Client{
+        min-width: 250px;
     }
-    .t23{
-        flex-direction: column;
-        padding:0 10px;
-    }
-    .comment{
-        padding:10px 30px
-        
-    }
-    .wrapper{
-        width: 320px;
-        top: 110px;
-        left: 50px;
-    }
-    .foot2{
-        left:70px ;
-    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
     .container{
-        width: 100%;
-        height:20px;
+        height: 70px;
+    }
+    .container #nav{
+        margin: 0;
+       padding: 35px;
+       font-size: 28px; 
+    }
+    .subMenu ul a{
+        font-size: 16px;
+        width: 250px;
+    }
+    .arrow{
+        font-size: 2.5rem;
+    }
+    .logo{
+        width: 120px;
+        height: 120px;
+    }
+    .power{
+        padding-bottom: 20px;
+    }
+    .mission{
+        width: 450px;
+    
+    } 
+    .Products{
+        display: flex;
+        max-width: 1000px;
+        padding-top: 3%;
+        margin: 0 auto;
+    }
+    .product{
+        width: 470px;
+    }
+    .Client{
+        min-width: 300px;
+    }
+    .foot{
+        height: 14vh;
+    }
+    /* login page */
+    .intro{
+        width: 600px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        height: 80px;
+    }
+    .container #nav{
+        margin: 0;
+       padding: 30px;
+       font-size: 28px; 
+    }
+    .subMenu ul a{
+        font-size: 17px;
+        width: 250px;
+    }
+    .arrow{
+        font-size: 3rem;
+    }
+    .logo{
+        width: 140px;
+        height: 140px;
+    }
+    .power{
+        padding-bottom: 20px;
+    }
+    .mission{
+        width: 450px;
+    } 
+    .product{
+        width:clamp(450px,550px+ 450px,500px) ;
+    }
+    .Client{
+        min-width: 300px;
+    }
+    .foot{
+        height: 13vh;
+    }
+    .intro{
+        width: 600px;
     }
 }
